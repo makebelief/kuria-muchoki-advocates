@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kuriamuchoki.co.ke/sitemap.xml
+Sitemap: https://kuria-muchoki-advocates.vercel.app/sitemap.xml
