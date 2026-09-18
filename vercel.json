@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/contact.mjs": {
+      "maxDuration": 10
+    },
+    "api/health.mjs": {
+      "maxDuration": 5
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -20,6 +28,17 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
     }
+  ],
+  "redirects": [
+    { "source": "/practice-areas", "destination": "/services", "permanent": true },
+    { "source": "/managing-partner", "destination": "/team", "permanent": true }
   ]
 }

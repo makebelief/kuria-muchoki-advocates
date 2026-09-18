@@ -1,37 +1,59 @@
 # Kuria Muchoki & Co. Advocates
 
-Static multi-page website for Kuria Muchoki & Co. Advocates. The interface follows the selected Kipkirui Kemboi reference direction—editorial scale, serif-led typography, strong calls to action and spacious white interior pages—adapted to the supplied Kuria Muchoki identity and content. It uses the firm logo’s black, white and muted-gold palette throughout.
+Production-oriented static HTML/CSS/JavaScript website for Kuria Muchoki & Co. Advocates, with a small Vercel Function for secure enquiry delivery.
 
-## Pages
+## Local preview
 
-- `index.html` — home page
+The static pages do not require npm:
+
+```bash
+python3 serve.py
+```
+
+Open `http://localhost:8001`.
+
+> The `/api/contact` Vercel Function does not run in the local Python preview server. In local static preview the form automatically falls back to the visitor's email application if API delivery is unavailable.
+
+## Production form setup
+
+The enquiry form posts to `/api/contact`. The function uses Resend's HTTPS API and falls back to `mailto:` in the browser if server delivery is unavailable.
+
+Set these Vercel Environment Variables before launch:
+
+- `RESEND_API_KEY` — Resend API key
+- `CONTACT_FROM_EMAIL` — verified sender, e.g. `Kuria Muchoki Website <enquiries@yourdomain.co.ke>`
+- `CONTACT_TO_EMAIL` — destination inbox. If omitted, the current practice Gmail address is used.
+
+A verified sending domain is strongly recommended for reliable delivery.
+
+## Production structure
+
+- `index.html` — homepage
 - `about.html` — firm overview
-- `services.html` — all ten practice areas
-- `practice-areas.html` — compatibility route for practice areas
-- `team.html` — Michael Muchoki managing-partner profile
-- `managing-partner.html` — compatibility route for the partner profile
-- `why-us.html` — the firm service standards
-- `insights.html` — general legal guides and FAQs
-- `contact.html` — direct contact, email enquiry and Google Maps
-- `privacy.html` — operational website privacy notice
-- `404.html` — branded error page
+- `services.html` — practice areas
+- `team.html` — professional information
+- `why-us.html` — service approach
+- `insights.html` — legal guides
+- `contact.html` — contact details and secure enquiry form
+- `privacy.html` — privacy notice
+- `legal-notice.html` — website disclaimer and engagement notice
+- `403.html`, `404.html`, `500.html`, `503.html`, `504.html` — branded error pages
+- `api/contact.mjs` — secure enquiry delivery endpoint
+- `api/health.mjs` — lightweight uptime endpoint
+- `.well-known/security.txt` — security contact information
+- `assets/css/site.css` — consolidated responsive design system
+- `assets/js/site.js` — navigation, accessibility, form delivery and contact rail
+- `sitemap.xml`, `robots.txt` — crawl/indexing controls
+- `site.webmanifest`, `favicon.ico`, `assets/icons/` — install/search/browser identity
+- `vercel.json` — Vercel routes, function settings, caching and security headers
 
-## Design system
+`practice-areas.html` and `managing-partner.html` remain only for compatibility and permanently redirect to `/services` and `/team` on Vercel.
 
-- Display type: locally hosted Cormorant Garamond
-- Interface and body type: locally hosted Manrope
-- Brand palette: black (`#171717`), muted gold (`#B18B4D`), white and restrained neutral tints
-- Site photography uses people in professional legal settings or a branded reception visual using the approved Kuria Muchoki logo
-- The supplied Michael Muchoki portrait is reserved for Team and managing-partner profile content only
+## Before public launch
 
-## Preview
-
-Serve this folder with any static server. The production build is deployed at `https://kuria-muchoki-advocates.vercel.app`.
-
-## Before final launch
-
-- Connect the approved custom domain when its DNS access is available, then update canonical and sitemap URLs.
-- Confirm the exact office wording (`Suite G7, Kikuyu Town`) and the Google Maps pin.
-- Have the firm approve the partner biography, practice descriptions and privacy notice.
-- Keep the supplied managing-partner portrait limited to Team and profile content; do not reuse it as generic site imagery.
-- If a server-side form is added later, add server validation, spam protection, rate limiting, secure delivery and an updated privacy notice.
+1. Attach the firm's final custom domain to Vercel.
+2. Replace `kuria-muchoki-advocates.vercel.app` in canonical, sitemap, structured-data and `security.txt` URLs with the final custom domain.
+3. Configure the three form environment variables above and submit a real test enquiry.
+4. Add the final domain to Google Search Console and submit `/sitemap.xml`.
+5. Create/verify the firm's Google Business Profile and keep name, address and telephone consistent with the website.
+6. Test the final deployment on mobile, desktop, WhatsApp, telephone, contact form, map and all navigation links.

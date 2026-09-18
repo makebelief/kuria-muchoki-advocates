@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/about</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/services</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/team</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/why-us</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/insights</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/contact</loc></url>
-  <url><loc>https://kuria-muchoki-advocates.vercel.app/privacy</loc></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/about</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/services</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/team</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/why-us</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/insights</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/contact</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/privacy</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://kuria-muchoki-advocates.vercel.app/legal-notice</loc><lastmod>2026-09-18</lastmod></url>
 </urlset>
