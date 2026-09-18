@@ -169,6 +169,8 @@ h1 em,h1 span,h2 span{font-style:italic;color:var(--gold);font-weight:500}
 .service-card-large{grid-column:span 4}
 .service-card-medium{grid-column:span 4}
 .service-card-wide,.service-card-banner{grid-column:span 8}
+.service-card-half{grid-column:span 6}
+.service-card-third{grid-column:span 4}
 
 /* Team */
 .team{background:var(--paper)}
@@ -755,3 +757,22 @@ a,button,input,select,textarea{touch-action:manipulation}
 .form-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
 .enquiry-form button[disabled]{opacity:.68;cursor:wait;transform:none!important}
 .form-status:not(:empty){margin-top:12px;min-height:1.5em}
+
+/* About editorial image + transparent brand lockup. */
+.about-editorial .about-logo-inset{display:none!important}
+.about-editorial{min-height:0;overflow:hidden}
+.about-editorial>img:not(.about-brand-lockup){display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center;filter:saturate(.86) contrast(1.01)}
+.about-editorial::before{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,transparent,rgba(8,10,9,.56));pointer-events:none;z-index:1}
+.about-brand-lockup{position:absolute;right:24px;bottom:24px;z-index:3;width:min(43%,255px)!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important;background:transparent!important;filter:drop-shadow(0 2px 9px rgba(0,0,0,.36))!important}
+.about-editorial .media-caption{left:24px;bottom:24px;z-index:3;max-width:44%}
+.about-editorial::after{content:"";position:absolute;right:-18px;top:30px;width:1px;height:110px;background:var(--gold);opacity:.75;z-index:2}
+@media (max-width:760px){
+  .about-editorial>img:not(.about-brand-lockup){width:100%;height:auto;aspect-ratio:5/4;object-position:center 42%}
+  .about-brand-lockup{right:16px;bottom:18px;width:min(46%,210px)!important}
+  .about-editorial .media-caption{left:16px;bottom:18px;max-width:45%;font-size:8px}
+  .about-editorial::after{right:12px;top:-14px;width:84px;height:1px}
+}
+@media (max-width:390px){
+  .about-editorial>img:not(.about-brand-lockup){aspect-ratio:4/3}
+  .about-brand-lockup{width:48%!important}
+}
